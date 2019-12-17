@@ -61,9 +61,7 @@ describe('trip routes', () => {
 
   it('gets all itinerary', async() => {
     const itinerary = await Itinerary.create([
-      { tripId: trip._id, woeId: 123, dayOf: 'Monday', typeOfActivity: 'culture' },
-      { tripId: trip._id, woeId: 123, dayOf: 'Tuesday', typeOfActivity: 'culture' },
-      { tripId: trip._id, woeId: 123, dayOf: 'Wednesday', typeOfActivity: 'culture' }
+      { tripId: trip._id, woeId: 123, dayOf: 'Monday', typeOfActivity: 'culture' }
       
     ]);
 
@@ -73,7 +71,7 @@ describe('trip routes', () => {
         itinerary.forEach(itinerary => {
           expect(res.body).toContainEqual({
             _id: itinerary._id.toString(),
-            tripId: trip._id, 
+            tripId: trip.id, 
             woeId: 123, 
             dayOf: 'Monday', 
             typeOfActivity: 'culture',
@@ -89,9 +87,9 @@ describe('trip routes', () => {
       .then(res => {
         expect(res.body).toEqual({
           _id: expect.any(String),
-          tripId: expect.any(String),
+          tripId: JSON.parse(JSON.stringify(trip)),
+          dayOf: expect.any(Number),
           woeId: expect.any(String),
-          dayOf: expect.any(String),
           typeOfActivity: expect.any(String),
           __v: 0
         });
@@ -106,8 +104,8 @@ describe('trip routes', () => {
         expect(res.body).toEqual({
           _id: expect.any(String),
           tripId: expect.any(String),
+          dayOf: expect.any(Number),
           woeId: expect.any(String),
-          dayOf: expect.any(String),
           typeOfActivity: 'outdoors',
           __v: 0
         });
@@ -122,7 +120,7 @@ describe('trip routes', () => {
         expect(res.body).toEqual({
           _id: expect.any(String),
           tripId: expect.any(String),
-          woeId: expect.any(String),
+          woeId: expect.any(Number),
           dayOf: expect.any(String),
           typeOfActivity: 'outdoors',
           __v: 0
