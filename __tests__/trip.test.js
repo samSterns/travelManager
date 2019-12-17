@@ -108,7 +108,7 @@ describe('trip routes', () => {
           _id: expect.any(String),
           place: 'Moombasa, Kenya',
           numberOfDays: 7,
-          isSolo: true,
+          isSolo: true, dfss
           __v: 0
         });
       });
