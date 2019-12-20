@@ -94,6 +94,7 @@ describe('trip routes', () => {
           place: 'Moombasa',
           numberOfDays: 7,
           isSolo: true,
+          itinerary: expect.any(Array),
           __v: 0
         });
       });
@@ -108,7 +109,7 @@ describe('trip routes', () => {
           _id: expect.any(String),
           place: 'Moombasa, Kenya',
           numberOfDays: 7,
-          isSolo: true, dfss
+          isSolo: true,
           __v: 0
         });
       });

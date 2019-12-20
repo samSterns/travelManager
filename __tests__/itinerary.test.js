@@ -88,8 +88,8 @@ describe('trip routes', () => {
         expect(res.body).toEqual({
           _id: expect.any(String),
           tripId: JSON.parse(JSON.stringify(trip)),
-          dayOf: expect.any(Number),
-          woeId: expect.any(String),
+          dayOf: expect.any(String),
+          woeId: expect.any(Number),
           typeOfActivity: expect.any(String),
           __v: 0
         });
@@ -104,8 +104,8 @@ describe('trip routes', () => {
         expect(res.body).toEqual({
           _id: expect.any(String),
           tripId: expect.any(String),
-          dayOf: expect.any(Number),
-          woeId: expect.any(String),
+          dayOf: expect.any(String),
+          woeId: expect.any(Number),
           typeOfActivity: 'outdoors',
           __v: 0
         });
@@ -122,7 +122,7 @@ describe('trip routes', () => {
           tripId: expect.any(String),
           woeId: expect.any(Number),
           dayOf: expect.any(String),
-          typeOfActivity: 'outdoors',
+          typeOfActivity: 'culture',
           __v: 0
         });
       });
