@@ -94,6 +94,7 @@ describe('trip routes', () => {
           place: 'Moombasa',
           numberOfDays: 7,
           isSolo: true,
+          itinerary: expect.any(Array),
           __v: 0
         });
       });
